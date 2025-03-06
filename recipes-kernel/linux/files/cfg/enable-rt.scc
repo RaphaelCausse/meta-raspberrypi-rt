@@ -1,0 +1,2 @@
+# Activation de PREEMPT_RT pour le kernel
+include cfg/preempt-rt.cfg
