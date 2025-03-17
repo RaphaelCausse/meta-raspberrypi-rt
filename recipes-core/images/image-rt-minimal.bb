@@ -3,6 +3,7 @@ LICENSE = "MIT"
 
 inherit core-image
 
+IMAGE_INSTALL:append = " glibc-utils glibc-locale kbd"
 IMAGE_INSTALL:append = " bash bash-completion vim tree htop"
 IMAGE_INSTALL:append = " busybox"
 IMAGE_INSTALL:append = " rt-tests"
