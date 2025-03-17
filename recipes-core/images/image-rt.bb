@@ -7,7 +7,3 @@ IMAGE_FEATURES:append = " ssh-server-openssh"
 
 IMAGE_INSTALL:append = " gdbserver"
 IMAGE_INSTALL:append = " rsyslog"
-
-#IMAGE_FEATURES:remove = ""
-
-#IMAGE_INSTALL:remove = ""
