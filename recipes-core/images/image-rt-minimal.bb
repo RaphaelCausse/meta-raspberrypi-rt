@@ -10,7 +10,7 @@ IMAGE_INSTALL:append = " busybox"
 IMAGE_INSTALL:append = " rt-tests"
 
 # Formats de l'image generee par Yocto
-IMAGE_FSTYPES = "wic wic.bz2 wic.bmap ext4"
+IMAGE_FSTYPES = "wic.bz2 wic.bmap ext4"
 
 # Partitionnement de l'image
 WKS_FILE = "sdimage-raspberrypi4-64.wks"
