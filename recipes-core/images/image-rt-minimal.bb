@@ -10,4 +10,4 @@ IMAGE_INSTALL:append = " busybox"
 IMAGE_INSTALL:append = " rt-tests"
 
 # Formats de l'image generee par Yocto
-IMAGE_FSTYPE = "wic.bz2 wic wic.bmap"
+IMAGE_FSTYPES = "wic wic.bz2 wic.bmap ext4"
