@@ -11,3 +11,7 @@ IMAGE_INSTALL:append = " rt-tests"
 
 # Formats de l'image generee par Yocto
 IMAGE_FSTYPES = "wic wic.bz2 wic.bmap ext4"
+
+# Partitionnement de l'image
+WKS_FILE = "sdimage-raspberrypi4-64.wks"
+WKS_FILES_PATH = "${LAYERDIR}/wic"
