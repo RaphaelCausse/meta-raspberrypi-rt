@@ -4,10 +4,12 @@
 auto lo
 iface lo inet loopback
 
-# Wired interfaces including predictable names
+# Wired interfaces
 auto eth0
-iface eth0 inet static
-    address 192.168.0.50
-    netmask 255.255.255.0
-    gateway 192.168.0.1
-    dns-nameserver 8.8.8.8
+iface eth0 inet dhcp
+
+# TOEDIT: For ip address assignment
+#iface eth0 inet static
+#    address A.B.C.D
+#    netmask 255.255.255.0
+#    gateway A.B.C.E
