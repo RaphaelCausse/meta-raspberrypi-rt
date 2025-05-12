@@ -14,10 +14,6 @@ IMAGE_INSTALL:append = " gdbserver"
 IMAGE_INSTALL:append = " rsyslog"
 
 # Formats de l'image generee par Yocto
-IMAGE_FSTYPES = "wic.bz2 wic wic.bmap"
+IMAGE_FSTYPES = "wic.bz2 wic.bmap"
 
 IMAGE_ROOTFS_EXTRAP_SPACE = "100000"
-
-# Partitionnement de l'image
-WKS_FILE = "sdimage-raspberrypi4-64.wks"
-WKS_FILES_PATH = "${LAYERDIR}/wic"
