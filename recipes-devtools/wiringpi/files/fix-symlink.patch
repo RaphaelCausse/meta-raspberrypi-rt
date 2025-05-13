@@ -1,0 +1,25 @@
+From ca878879b5a08d97a9611d56e3c05ddab2326245 Mon Sep 17 00:00:00 2001
+From: Raphael CAUSSE <raphael.causse2@gmail.com>
+Date: Tue, 13 May 2025 13:53:28 +0200
+Subject: [PATCH] fix: Install symlink for Yocto recipe
+
+---
+ wiringPi/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/wiringPi/Makefile b/wiringPi/Makefile
+index 88fc48e..b71f605 100644
+--- a/wiringPi/Makefile
++++ b/wiringPi/Makefile
+@@ -102,7 +102,7 @@ install:	$(DYNAMIC)
+ 	$Q echo "[Install Dynamic Lib]"
+ 	$Q install -m 0755 -d						$(DESTDIR)$(PREFIX)/lib
+ 	$Q install -m 0755 libwiringPi.so.$(VERSION)			$(DESTDIR)$(PREFIX)/lib/libwiringPi.so.$(VERSION)
+-	$Q ln -sf $(DESTDIR)$(PREFIX)/lib/libwiringPi.so.$(VERSION)	$(DESTDIR)/lib/libwiringPi.so
++	$Q ln -sf $(DESTDIR)$(PREFIX)/lib/libwiringPi.so.$(VERSION)	$(DESTDIR)$(PREFIX)/lib/libwiringPi.so
+ 	$Q $(LDCONFIG)
+ 
+ .PHONY: check-deb-destdir
+-- 
+2.43.0
+

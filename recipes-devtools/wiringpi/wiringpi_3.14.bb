@@ -3,8 +3,10 @@ HOMEPAGE = "https://github.com/WiringPi/WiringPi"
 LICENSE = "LGPL-3.0-only"
 LIC_FILES_CHKSUM = "file://COPYING.LESSER;md5=e6a600fd5e1d9cbde2d983680233ad02"
 
-SRC_URI = "git://github.com/WiringPi/WiringPi.git;branch=master;protocol=https"
-# Tag 3.14
+SRC_URI = "git://github.com/WiringPi/WiringPi.git;branch=master;protocol=https \
+           file://fix-symlink.patch \
+           "
+
 SRCREV = "4639b7ac45ff87a9c2271a3d44f7fccb618c88ff"
 
 S = "${WORKDIR}/git"
@@ -32,4 +34,3 @@ FILES:${PN} += " \
     /usr/lib/libwiringPi.so* \
     /usr/include \
 "
-
