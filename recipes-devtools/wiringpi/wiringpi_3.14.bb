@@ -9,17 +9,23 @@ SRCREV = "4639b7ac45ff87a9c2271a3d44f7fccb618c88ff"
 
 S = "${WORKDIR}/git"
 
+DEPENDS += "libxcrypt"
+RDEPENDS:${PN} += "libxcrypt"
+
 inherit pkgconfig
 
 # Variables pour cross-compilation propre
-EXTRA_OEMAKE += "CC='${CC}' AR='${AR}' RANLIB='${RANLIB}' DESTDIR=${D} PREFIX=/usr"
+EXTRA_OEMAKE += "CC='${CC}' AR='${AR}' RANLIB='${RANLIB}'"
 
 do_compile() {
     oe_runmake -C wiringPi
 }
 
 do_install() {
-    oe_runmake -C wiringPi install
+    oe_runmake -C wiringPi \
+        DESTDIR="${D}" \
+        PREFIX="/usr" \
+        install
 }
 
 FILES:${PN} += " \
