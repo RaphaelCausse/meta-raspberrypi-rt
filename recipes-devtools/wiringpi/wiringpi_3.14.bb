@@ -17,7 +17,7 @@ RDEPENDS:${PN} += "libxcrypt"
 inherit pkgconfig
 
 # Variables pour cross-compilation propre
-EXTRA_OEMAKE += "CC='${CC}' AR='${AR}' RANLIB='${RANLIB}'"
+EXTRA_OEMAKE += "CC='${CC}' AR='${AR}' RANLIB='${RANLIB}' LDFLAGS='${LDFLAGS}'"
 
 do_compile() {
     oe_runmake -C wiringPi
