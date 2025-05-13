@@ -14,6 +14,7 @@ IMAGE_INSTALL:append = " busybox"
 IMAGE_INSTALL:append = " rt-tests htop"
 IMAGE_INSTALL:append = " gdbserver"
 IMAGE_INSTALL:append = " rsyslog"
+IMAGE_INSTALL:append = " wiringpi"
 
 IMAGE_INSTALL:remove = "wpa-supplicant"
 IMAGE_INSTALL:remove = "bluez bluez5-compat bluez5-utils"
