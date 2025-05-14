@@ -18,16 +18,14 @@ inherit pkgconfig
 
 # Variables pour cross-compilation propre
 EXTRA_OEMAKE += "CC='${CC}' AR='${AR}' RANLIB='${RANLIB}' LDFLAGS='${LDFLAGS}'"
+EXTRA_OEMAKE += "DESTDIR='${D}' PREFIX='/usr'"
 
 do_compile() {
     oe_runmake -C wiringPi
 }
 
 do_install() {
-    oe_runmake -C wiringPi \
-        DESTDIR="${D}" \
-        PREFIX="/usr" \
-        install
+    oe_runmake -C wiringPi install
 }
 
 FILES:${PN} += " \
