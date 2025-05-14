@@ -3,6 +3,8 @@ HOMEPAGE = "https://github.com/WiringPi/WiringPi"
 LICENSE = "LGPL-3.0-only"
 LIC_FILES_CHKSUM = "file://COPYING.LESSER;md5=e6a600fd5e1d9cbde2d983680233ad02"
 
+PV = "3.14"
+
 inherit pkgconfig
 
 SRCREV = "4639b7ac45ff87a9c2271a3d44f7fccb618c88ff"
@@ -27,7 +29,14 @@ do_install() {
     oe_runmake -C wiringPi install
 }
 
-FILES:${PN} += " \
-    /usr/lib/libwiringPi.so* \
-    /usr/include \
-"
+libdir ?= "${exec_prefix}/lib"
+
+do_install:append() {
+    echo "Appending symlink to libwiringPi.so (${libdir})"
+    ln -sf libwiringPi.so.${PV} ${D}${libdir}/libwiringPi.so
+}
+
+FILES:${PN} += "${libdir}/libwiringPi.so \
+                ${libdir}/libwiringPi.so.${PV} \
+                "
+FILES:${PN}-dev += "${includedir}"

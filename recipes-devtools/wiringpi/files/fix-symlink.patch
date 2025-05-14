@@ -1,4 +1,4 @@
-From 5ab93d8e94c136edeee084cde4bf53062e465024 Mon Sep 17 00:00:00 2001
+From 138bf1298e9b62442a017377b35fb7316f51326f Mon Sep 17 00:00:00 2001
 From: Raphael CAUSSE <raphael.causse2@gmail.com>
 Date: Tue, 13 May 2025 13:53:28 +0200
 Subject: [PATCH] fix: Install symlink for Yocto recipe
