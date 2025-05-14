@@ -29,14 +29,9 @@ do_install() {
     oe_runmake -C wiringPi install
 }
 
-libdir ?= "${exec_prefix}/lib"
-
 do_install:append() {
-    echo "Appending symlink to libwiringPi.so (${libdir})"
     ln -sf libwiringPi.so.${PV} ${D}${libdir}/libwiringPi.so
 }
 
-FILES:${PN} += "${libdir}/libwiringPi.so \
-                ${libdir}/libwiringPi.so.${PV} \
-                "
+FILES:${PN} += "${libdir}"
 FILES:${PN}-dev += "${includedir}"
