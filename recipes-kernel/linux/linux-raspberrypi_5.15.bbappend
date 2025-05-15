@@ -1,15 +1,10 @@
 LINUX_VERSION ?= "5.15.92"
 
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:${THISDIR}/files/cfg:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:${THISDIR}/files/cfg:${THISDIR}/files/patches:"
 
-# Ajout du patch RT specifique a la version 5.15.92
-SRC_URI += "file://patch-5.15.92-rt57.patch \
-            file://cfg/enable-rt.scc \
+SRC_URI += "file://patches/patch-5.15.92-rt57.patch \
             file://cfg/preempt-rt.cfg \
+            file://cfg/bluetooth.cfg \
             "
 
-# Activation des configs PREEMPT_RT avec SCC
-KERNEL_FEATURES:append = " cfg/enable-rt.scc"
-
-# Appliquer le patch PREEMPT_RT uniquement pour notre machine
 COMPATIBLE_MACHINE = "raspberrypi4-64-rt"
