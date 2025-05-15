@@ -18,10 +18,10 @@ IMAGE_INSTALL:append = " wiringpi"
 
 IMAGE_INSTALL:remove = "wpa-supplicant"
 IMAGE_INSTALL:remove = "bluez bluez5-compat bluez5-utils bluez-firmware-rpidistro"
+BAD_RECOMMENDATIONS:append = " bluez-firmware-rpidistro"
 
 # Formats de l'image generee par Yocto
 IMAGE_FSTYPES = "wic.bz2 wic.bmap"
 
 # Taille minimal de la partition rootfs (en Kbytes)
 IMAGE_ROOTFS_SIZE = "10240"
-
