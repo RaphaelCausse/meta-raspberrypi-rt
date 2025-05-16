@@ -5,12 +5,13 @@ LICENSE = "MIT"
 inherit useradd
 
 USER = "pi"
-# Definir le hash du password 'azerty' (via la commande `mkpasswd -m sha-512 <password>`)
-PASSWORD_HASH = "$6$TPtiX7HpeFSf9geH$1.FAhkq/cMm08PkQh7s.t8jXDEAGa.hKLNqJelyTUiZh2EyzbYGartuJihg1JUm8TbX8rjxQ8MAioC/6MEqNO."
+# Definir le hash du password 'azerty' (via la commande `openssl passwd -6 <password>`)
+PASSWORD_HASH = "$6$G4FqZm6nWcaXNbZe$Zq/yXX5n2roG2BAiKjtKe36NRizlRXRD3gan3uYBjKEc7ErVGkLnMc0y33O7hPYb0myGC0IyP5bhL1ySuwy020"
 
 USERADD_PACKAGES = "${PN}"
 
-USERADD_PARAM:${PN} = "-u 1000 -d '/home/${USER}' -s /bin/bash -G sudo,dialout -p '${PASSWORD_HASH}' ${USER}"
+USERADD_PARAM:${PN} = "--create-home --shell /bin/bash --uid 1000 --groups sudo,dialout --password '${PASSWORD_HASH}' ${USER}"
+GROUPADD_PARAM:${PN} = ""
 
 do_install() {
     install -d ${D}/home/${USER}
