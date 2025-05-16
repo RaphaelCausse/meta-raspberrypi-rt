@@ -1,5 +1,5 @@
-# Activer l'UART
-ENABLE_UART = "1"
+# UART pour une console sur /dev/ttyS0
+ENABLE_UART ??= "0"
 
 # Isoler et optimiser les CPU pour le temps reel
 ISOLATED_CPUS = "1-3"
@@ -10,6 +10,7 @@ MACHINE_FEATURES:append = " serial"
 # Desactivation des fonctionnalites materielles inutiles
 MACHINE_FEATURES:remove = "wifi bluetooth alsa audio touchscreen apm phone qemu-usermode"
 MACHINE_EXTRA_RRECOMMENDS:remove = "bluez-firmware-rpidistro"
+BAD_RECOMMENDATIONS:append = " bluez-firmware-rpidistro"
 
 # Desactivation des fonctionnalites logicielles inutiles
 DISTRO_FEATURES:remove = "wifi bluetooth alsa pulseaudio x11 wayland opengl vulkan nfc 3g ptest pcmcia"
