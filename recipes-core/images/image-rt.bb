@@ -16,6 +16,7 @@ IMAGE_INSTALL:append = " busybox"
 IMAGE_INSTALL:append = " rt-tests htop"
 IMAGE_INSTALL:append = " gdbserver rsyslog"
 IMAGE_INSTALL:append = " wiringpi"
+IMAGE_INSTALL:append = " user-pi"
 
 # Supprimer des packages
 IMAGE_INSTALL:remove = "wpa-supplicant"
