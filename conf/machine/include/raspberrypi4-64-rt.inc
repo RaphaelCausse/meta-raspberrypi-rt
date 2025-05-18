@@ -10,7 +10,6 @@ MACHINE_FEATURES:append = " serial"
 # Desactivation des fonctionnalites materielles inutiles
 MACHINE_FEATURES:remove = "wifi bluetooth alsa audio touchscreen apm phone qemu-usermode"
 MACHINE_EXTRA_RRECOMMENDS:remove = "bluez-firmware-rpidistro"
-BAD_RECOMMENDATIONS:append = " bluez-firmware-rpidistro"
 
 # Desactivation des fonctionnalites logicielles inutiles
 DISTRO_FEATURES:remove = "wifi bluetooth alsa pulseaudio x11 wayland opengl vulkan nfc 3g ptest pcmcia"
