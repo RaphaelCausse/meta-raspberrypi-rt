@@ -10,8 +10,7 @@ IMAGE_FEATURES:append = " ssh-server-openssh"
 IMAGE_FEATURES:remove = "debug-tweaks package-management splash"
 
 # Ajouter des packages
-IMAGE_INSTALL:append = " util-linux"
-IMAGE_INSTALL:append = " bash bash-completion sudo tree vim nano"
+IMAGE_INSTALL:append = " util-linux bash bash-completion sudo tree vim nano"
 IMAGE_INSTALL:append = " busybox"
 IMAGE_INSTALL:append = " rt-tests htop"
 IMAGE_INSTALL:append = " gdbserver rsyslog"
@@ -25,7 +24,7 @@ PACKAGE_EXCLUDE:append = " bluez-firmware-rpidistro"
 BAD_RECOMMENDATIONS:append = " bluez-firmware-rpidistro"
 
 # Formats de l'image generee par Yocto
-IMAGE_FSTYPES = "wic.bz2 wic.bmap"
+IMAGE_FSTYPES = "tar.bz2 wic.bz2 wic.bmap"
 
 # Taille minimal de la partition rootfs (en Kbytes)
 IMAGE_ROOTFS_SIZE = "10240"
