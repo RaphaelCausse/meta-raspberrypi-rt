@@ -21,6 +21,10 @@ do_install() {
     install -d ${D}${sysconfdir}/sudoers.d
     echo "pi ALL=(ALL) NOPASSWD: ALL" > ${D}${sysconfdir}/sudoers.d/pi
     chmod 0440 ${D}${sysconfdir}/sudoers.d/pi
+
+    install -d ${D}${sysconfdir}/profile.d
+    echo 'export PATH=$PATH:/sbin:/usr/sbin' > ${D}${sysconfdir}/profile.d/add-sbin-path.sh
+    chmod 0755 ${D}${sysconfdir}/profile.d/add-sbin-path.sh
 }
 
 FILES:${PN} += "/home/${USER}"
