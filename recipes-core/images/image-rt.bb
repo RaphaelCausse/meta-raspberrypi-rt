@@ -11,7 +11,7 @@ IMAGE_FEATURES:remove = "debug-tweaks package-management splash"
 
 # Ajouter des packages
 IMAGE_INSTALL:append = " util-linux bash bash-completion sudo tree vim nano"
-IMAGE_INSTALL:append = " busybox"
+IMAGE_INSTALL:append = " busybox iproute2"
 IMAGE_INSTALL:append = " rt-tests htop"
 IMAGE_INSTALL:append = " gdbserver rsyslog"
 IMAGE_INSTALL:append = " wiringpi"
