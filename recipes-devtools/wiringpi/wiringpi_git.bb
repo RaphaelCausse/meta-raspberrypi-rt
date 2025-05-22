@@ -3,11 +3,11 @@ HOMEPAGE = "https://github.com/WiringPi/WiringPi"
 LICENSE = "LGPL-3.0-only"
 LIC_FILES_CHKSUM = "file://COPYING.LESSER;md5=e6a600fd5e1d9cbde2d983680233ad02"
 
-PV = "3.14"
+PV = "3.4"
 
 inherit pkgconfig
 
-SRCREV = "4639b7ac45ff87a9c2271a3d44f7fccb618c88ff"
+SRCREV = "8960cc91b911db8ec0c272781edf34b8aedb60d9"
 SRC_URI = "git://github.com/WiringPi/WiringPi.git;branch=master;protocol=https \
            file://fix-symlink.patch \
            "
