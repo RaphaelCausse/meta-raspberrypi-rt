@@ -1,0 +1,35 @@
+From 138bf1298e9b62442a017377b35fb7316f51326f Mon Sep 17 00:00:00 2001
+From: Raphael CAUSSE <raphael.causse2@gmail.com>
+Date: Tue, 13 May 2025 13:53:28 +0200
+Subject: [PATCH] fix: Install symlink for Yocto recipe
+
+---
+ wiringPi/Makefile | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/wiringPi/Makefile b/wiringPi/Makefile
+index 88fc48e..e0e1cad 100644
+--- a/wiringPi/Makefile
++++ b/wiringPi/Makefile
+@@ -76,7 +76,7 @@ static:
+ 
+ $(DYNAMIC):	$(OBJ)
+ 	$Q echo "[Link (Dynamic)]"
+-	$Q $(CC) -shared -Wl,-soname,libwiringPi.so$(WIRINGPI_SONAME_SUFFIX) -o libwiringPi.so.$(VERSION) $(OBJ) $(LIBS)
++	$Q $(CC) $(LDFLAGS) -shared -Wl,-soname,libwiringPi.so$(WIRINGPI_SONAME_SUFFIX) -o libwiringPi.so.$(VERSION) $(OBJ) $(LIBS)
+ 
+ .c.o:
+ 	$Q echo [Compile] $<
+@@ -102,8 +102,7 @@ install:	$(DYNAMIC)
+ 	$Q echo "[Install Dynamic Lib]"
+ 	$Q install -m 0755 -d						$(DESTDIR)$(PREFIX)/lib
+ 	$Q install -m 0755 libwiringPi.so.$(VERSION)			$(DESTDIR)$(PREFIX)/lib/libwiringPi.so.$(VERSION)
+-	$Q ln -sf $(DESTDIR)$(PREFIX)/lib/libwiringPi.so.$(VERSION)	$(DESTDIR)/lib/libwiringPi.so
+-	$Q $(LDCONFIG)
++	$Q ln -sf libwiringPi.so.$(VERSION)	$(DESTDIR)$(PREFIX)/lib/libwiringPi.so
+ 
+ .PHONY: check-deb-destdir
+ check-deb-destdir:
+-- 
+2.43.0
+

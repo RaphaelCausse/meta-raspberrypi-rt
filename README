@@ -5,23 +5,23 @@ Please see the corresponding sections below for details.
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
+  URI: https://git.yoctoproject.org/poky
+  branch: kirkstone
 
-  URI: <second dependency>
-  branch: <branch name>
+  URI: https://git.openembedded.org/meta-openembedded
+  branch: kirkstone
 
-  .
-  .
-  .
+  URI: https://git.yoctoproject.org/meta-raspberrypi
+  branch: kirkstone
+
 
 Patches
 =======
 
-Please submit any patches against the meta-raspberrypi-rt layer to the xxxx mailing list (xxxx@zzzz.org)
+Please submit any patches against the meta-raspberrypi-rt layer to the Yocto mailing list (yocto@yoctoproject.org)
 and cc: the maintainer:
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+Maintainer: Raphael Causse <raphael.causse2@gmail.com>
 
 Table of Contents
 =================
@@ -38,4 +38,19 @@ Run 'bitbake-layers add-layer meta-raspberrypi-rt'
 II. Misc
 ========
 
---- replace with specific information about the meta-raspberrypi-rt layer ---
+The meta-raspberrypi-rt layer provides support for building a real-time Linux system using the PREEMPT_RT patchset
+for the Raspberry Pi 4 (64-bit) with Yocto Project (Kirkstone branch).
+
+Features include:
+
+- PREEMPT_RT enabled Linux kernel (5.15.x)
+- Real-time image recipe (`image-rt`)
+- Support for `openssh`, `rsyslog`, `rt-tests`, `gdbserver`, `wiringpi` 
+- Minimal set of enabled drivers and services to optimize real-time performance
+- Ethernet, Serial and USB support
+- Kernel configuration fragments and SCCs for easy PREEMPT_RT customization
+- Output image in WIC format (wic.bz2, wic.bmap) for flashing with `bmaptool` or `dd`
+
+This layer is designed to be used in conjunction with `poky`, `meta-openembedded`, and `meta-raspberrypi`.
+
+And optionally configure CPU isolation and kernel boot args in `config.txt` and `cmdline.txt` for better real-time performance.
